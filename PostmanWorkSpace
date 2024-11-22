@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "75afbb93-01c9-454d-8930-2a0c84755b84",
+		"name": "Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37452621",
+		"_collection_link": "https://www.postman.com/bermuda-tp-team/workspace/tp3prograutnframateobarbato/collection/37452621-75afbb93-01c9-454d-8930-2a0c84755b84?action=share&source=collection_link&creator=37452621"
+	},
+	"item": [
+		{
+			"name": "Developers",
+			"item": [
+				{
+					"name": "Crear un developer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/developers/create",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"developers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leer todos los developers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/developers/getAll",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"developers",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leer un developer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/developers/get/:id",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"developers",
+								"get",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un developer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/developers/delete/:id",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"developers",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "Leer todos los juegos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/games/getAll",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"games",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leer un juego",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/games/get/:id",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"games",
+								"get",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar juego",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated Game Name\",\r\n  \"type\": \"Arcade\",\r\n  \"status\": \"active\",\r\n  \"platform\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominio}}/games/update/:id",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"games",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear juego",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/games/create",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"games",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar juego",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/games/delete/:id",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"games",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dominio}}/games/getAll?page=1&limit=3&sort=DESC",
+							"host": [
+								"{{dominio}}"
+							],
+							"path": [
+								"games",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dominio",
+			"value": "http://localhost:3\n000",
+			"type": "string"
+		}
+	]
+}
