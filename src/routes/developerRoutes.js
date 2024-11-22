@@ -11,12 +11,12 @@ router.get('/', developerController.getAll);
 router.get('/', developerController.getById);
 
 /* Actualizar por id */
-router.get('/', developerController.update);
+router.patch('/', developerController.update);
 
 /* Eliminar por id */
-router.get('/', developerController.delete);
+router.delete('/', developerController.delete);
 
 /* Crear un registro */
-router.get('/', developerController.create);
+router.post('/', developerController.create);
 
 module.exports = router;

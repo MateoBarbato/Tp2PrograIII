@@ -10,13 +10,13 @@ router.get('/', gamesController.getAll);
 router.get('/', gamesController.getById);
 
 /* Actualizar por id */
-router.get('/', gamesController.update);
+router.patch('/', gamesController.update);
 
 /* Eliminar por id */
-router.get('/', gamesController.delete);
+router.delete('/', gamesController.delete);
 
 /* Crear un registro */
-router.get('/', gamesController.create);
+router.post('/', gamesController.create);
 
 
 
