@@ -1,4 +1,6 @@
 # Project: Endpoints
+# Importante Aclaracion !
+### Se debe ajustar la variable de entorno {{dominio}} al contexto. Si tu proyecto corre en localhost:3000 || localhost:8000 , hacer el ajuste correspondiente
 # 📁 Collection: Developers 
 
 
