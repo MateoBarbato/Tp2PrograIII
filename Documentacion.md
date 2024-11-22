@@ -1,7 +1,8 @@
 # Project: Endpoints
 # Importante Aclaracion !
-### Se debe ajustar la variable de entorno {{dominio}} al contexto. 
-###Si tu proyecto corre en localhost:3000 || localhost:8000 , hacer el ajuste correspondiente
+### Se debe ajustar la variable de entorno {{dominio}} al entorno de testing. 
+### Recomiendo altamente que se testee en postman y se declare la variable de entorno. En este link se puede encontrar el archivo para importar el workspace de postman [Postman]() 
+### Si tu proyecto corre en localhost:3000 || localhost:8000 , hacer el ajuste correspondiente
 # 📁 Collection: Developers 
 
 
