@@ -1,6 +1,6 @@
-const sequelize = require('../config/db');
+const sequelize = require('../data/db');
 const Developer = require('./Developer');
-const Game = require('./Game');
+const Game = require('./game')
 
 // Relación: Un Developer tiene muchos Games
 Developer.hasMany(Game, { foreignKey: 'developerId', as: 'games' });

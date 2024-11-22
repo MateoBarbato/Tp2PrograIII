@@ -1,22 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const gamesController = require('../controllers/gamesController');
+const {validateBodyUpdateGame} = require('../middlewares/gameValidators');
 
+const validate = require('../middlewares/validate');
+const { param } = require('express-validator');
 
 /* Leer todo los registros */
-router.get('/', gamesController.getAll);
+router.get('/getAll', gamesController.getAll);
 
 /* Leer por id */
-router.get('/', gamesController.getById);
+router.get('/get/:id', validate([
+    param('id').isInt().withMessage('ID invalido')
+]), gamesController.getById);
 
 /* Actualizar por id */
-router.patch('/', gamesController.update);
+router.patch('/update/:id',validateBodyUpdateGame, gamesController.update);
 
 /* Eliminar por id */
-router.delete('/', gamesController.delete);
+router.delete('/delete/:id',validate([
+    param('id').isInt().withMessage('ID invalido')
+]), gamesController.delete);
 
 /* Crear un registro */
-router.post('/', gamesController.create);
+router.post('/create', gamesController.create);
 
 
 

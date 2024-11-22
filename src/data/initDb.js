@@ -1,6 +1,5 @@
 const sequelize = require('./db');
-const Developer = require('../models/Developer');
-const Game = require('../models/Game');
+const {Developer,Game} = require("../models/index");
 
 (async () => {
 

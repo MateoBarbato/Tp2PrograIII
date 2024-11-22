@@ -1,21 +1,12 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require("../data/db");
+// const Developer = require('./developer');
 
 const Game = sequelize.define('Game', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
   },
   name: {
     type: DataTypes.STRING,
@@ -35,14 +26,26 @@ const Game = sequelize.define('Game', {
   },
   developerId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
     references: {
       model: 'Developers',
       key: 'id',
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL',
   },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW, // This reflects MySQL's default CURRENT_TIMESTAMP
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW, // This reflects the MySQL trigger for updates
+  },
+}, {
+  timestamps: true, // Sequelize will expect createdAt and updatedAt fields
+  updatedAt: false, // Disable Sequelize's auto-update for updatedAt
 });
+
+// Game.belongsTo(Developer, { foreignKey: 'developerId', as: 'developer' }); // Association
 
 module.exports = Game;

@@ -1,5 +1,4 @@
-const Game = require('../models/Game');
-const Developer = require('../models/Developer');
+const {Developer,Game} = require("../models/index");
 
 const gamesController = {
   // Obtener todos los juegos
