@@ -1,7 +1,7 @@
 const {Developer,Game} = require("../models/index");
 
-const developerController = {
-    // Obtener todos los desarrolladores
+class developerController  {
+    
     async getAll(req, res) {
         try {
             const developers = await Developer.findAll({
@@ -12,8 +12,8 @@ const developerController = {
             console.error(error);
             res.status(500).json({ error: 'Error al obtener los desarrolladores.' });
         }
-    },
-    
+    }
+
     // Obtener un desarrollador por ID
     async getById(req, res) {
         try {
@@ -30,7 +30,7 @@ const developerController = {
             console.error(error);
             res.status(500).json({ error: 'Error al obtener el desarrollador.' });
         }
-    },
+    }
     
     // Crear un nuevo desarrollador
     async create(req, res) {
@@ -42,7 +42,7 @@ const developerController = {
             console.error(error);
             res.status(500).json({ error: 'Error al crear el desarrollador.' });
         }
-    },
+    }
         
     // Eliminar un desarrollador
     
@@ -61,7 +61,7 @@ const developerController = {
             console.error(error);
             res.status(500).json({ error: 'Error al eliminar el desarrollador.' });
         }
-    },
+    }
 
     // // Actualizar un desarrollador existente
     // async update(req, res) {
@@ -85,4 +85,4 @@ const developerController = {
 
 };
 
-module.exports = developerController;
+module.exports = new developerController();

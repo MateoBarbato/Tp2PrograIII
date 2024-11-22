@@ -1,18 +1,70 @@
 const {Developer,Game} = require("../models/index");
 
-const gamesController = {
+class GamesController  {
+
   // Obtener todos los juegos
   async getAll(req, res) {
     try {
-      const games = await Game.findAll({
-        include: { model: Developer, as: 'developer' }, // Incluye información de la desarrolladora
+      const {
+        page,
+        limit,
+        sort = 'ASC', //Orden default de la consulta
+        type,
+        status,
+      } = req.query;
+  
+      // Prepare filters
+      const filters = {};
+      if (type) {
+        filters.type = type; // Filtra por tipo/categoria
+      }
+      if (status) {
+        filters.status = status; // Filtra por estado
+      }
+  
+      // Opciones basicas de la consulta filtrada
+      let options = {
+        where: filters,
+        order: [['createdAt', sort.toUpperCase() === 'DESC' ? 'DESC' : 'ASC']],
+      };
+  
+      // Maneja la paginación opcional
+      if (page && limit) {
+        const pageNum = parseInt(page, 10);
+        const limitNum = parseInt(limit, 10);
+        if (isNaN(pageNum) || isNaN(limitNum) || pageNum <= 0 || limitNum <= 0) {
+          return res.status(400).json({ error: 'Page and limit must be positive integers.' });
+        }
+        const offset = (pageNum - 1) * limitNum;
+        options = { ...options, limit: limitNum, offset };
+      }
+  
+      // Query la db
+      const games = await Game.findAll(options);
+      const gamesTotal = await Game.findAll();
+
+      const maxPagePossible = Math.ceil(gamesTotal.length / limit);
+  
+      // Calcula el total de registros
+      let total = 0;
+      if (page && limit) {
+        total = await Game.count({ where: filters });
+      }
+  
+      // Enviar el resultado
+      res.status(200).json({
+        total: total || games.length, 
+        maxPagePossible,
+        page: page || null, 
+        limit: limit || null,
+        games
+       
       });
-      res.status(200).json(games);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: 'Error al obtener los juegos.' });
+      res.status(500).json({ error: 'Error fetching games.' });
     }
-  },
+  }
 
   // Obtener un juego por ID
   async getById(req, res) {
@@ -29,7 +81,7 @@ const gamesController = {
       console.error(error);
       res.status(500).json({ error: 'Error al obtener el juego.' });
     }
-  },
+  }
 
   // Crear un nuevo juego
   async create(req, res) {
@@ -41,7 +93,7 @@ const gamesController = {
       console.error(error);
       res.status(500).json({ error: 'Error al crear el juego.' });
     }
-  },
+  }
 
   // Actualizar un juego existente
   async update(req, res) {
@@ -60,7 +112,7 @@ const gamesController = {
       console.error(error);
       res.status(500).json({ error: 'Error al actualizar el juego.' });
     }
-  },
+  }
 
   // Eliminar un juego
   async delete(req, res) {
@@ -78,7 +130,7 @@ const gamesController = {
       console.error(error);
       res.status(500).json({ error: 'Error al eliminar el juego.' });
     }
-  },
+  }
 };
 
-module.exports = gamesController;
+module.exports = new GamesController();

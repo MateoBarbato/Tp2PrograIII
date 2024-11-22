@@ -4,6 +4,7 @@ const developerController = require('../controllers/developerController');
 
 const validate = require('../middlewares/validate');
 const { param } = require('express-validator');
+const { validateBodyCreateDeveloper } = require('../middlewares/developersValidators');
 
 /* Leer todo los registros */
 router.get('/getAll', developerController.getAll);
@@ -19,6 +20,6 @@ router.delete('/delete/:id',validate([
 ]), developerController.delete);
 
 /* Crear un registro */
-router.post('/create', developerController.create);
+router.post('/create', validateBodyCreateDeveloper ,developerController.create);
 
 module.exports = router;

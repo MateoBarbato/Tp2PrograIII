@@ -2,9 +2,8 @@ const validate = require('./validate');
 const { param,body } = require('express-validator');
 
 
-const validateBodyUpdateDeveloper = [
+const validateBodyCreateDeveloper = [
     validate([
-        param('id').isInt().withMessage('ID invalido'),
 
         body('name')
         .notEmpty().withMessage("Campo vacio")
@@ -16,11 +15,10 @@ const validateBodyUpdateDeveloper = [
 
         body('specialty')
         .notEmpty().withMessage("No enviar campos vacios")
-        .isString().withMessage('Especialidad invalido'),
+        .isString().withMessage('Especialidad invalido')
 
     ])
 ]
 
 
-
-module.exports = { validateBodyUpdateDeveloper };
+module.exports = { validateBodyCreateDeveloper };

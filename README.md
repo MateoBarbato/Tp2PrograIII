@@ -9,3 +9,9 @@
 ### MYSQL como base de datos
 ### Nodemon
 ### Sequelize-Cli -> seeder para popular la base de datos.
+
+
+
+
+
+# Documentacion 

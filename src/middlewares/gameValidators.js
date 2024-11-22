@@ -26,4 +26,28 @@ const validateBodyUpdateGame = [
 
 
 
-module.exports = { validateBodyUpdateGame };
+const validateBodyCreateGame = [
+    validate([
+        body('developerId').notEmpty().withMessage("El id del desarollador es obligatorio").isInt().withMessage('ID invalido'),
+
+        body('name')
+        .notEmpty().withMessage("No enviar campos vacios")
+        .isString().withMessage('Nombre invalido'),
+
+        body('type')
+        .notEmpty().withMessage("No enviar campos vacios")
+        .isIn(['Arcade', 'Strategy', 'Adventure', 'Sports']).withMessage('Tipo invalido. Posibles tipos: Arcade, Strategy, Adventure, Sports'),
+
+        body('status')
+        .notEmpty().withMessage("No enviar campos vacios")
+        .isIn(['active', 'inactive']).withMessage('Estado invalido. Posibles estados: active, inactive'),
+
+        body('platform')
+        .notEmpty().withMessage("No enviar campos vacios")
+        .isString().withMessage('Plataforma invalido'),
+    ])
+]
+
+
+
+module.exports = { validateBodyUpdateGame, validateBodyCreateGame };

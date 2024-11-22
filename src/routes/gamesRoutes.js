@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const gamesController = require('../controllers/gamesController');
-const {validateBodyUpdateGame} = require('../middlewares/gameValidators');
+const {validateBodyUpdateGame, validateBodyCreateGame} = require('../middlewares/gameValidators');
 
 const validate = require('../middlewares/validate');
 const { param } = require('express-validator');
+
 
 /* Leer todo los registros */
 router.get('/getAll', gamesController.getAll);
@@ -23,7 +24,7 @@ router.delete('/delete/:id',validate([
 ]), gamesController.delete);
 
 /* Crear un registro */
-router.post('/create', gamesController.create);
+router.post('/create', validateBodyCreateGame , gamesController.create);
 
 
 
