@@ -1,0 +1,17 @@
+[
+    {
+      "name": "John",
+      "surname": "Doe",
+      "specialty": "Arcade Games"
+    },
+    {
+      "name": "Jane",
+      "surname": "Smith",
+      "specialty": "Strategy Games"
+    },
+    {
+      "name": "Michael",
+      "surname": "Brown",
+      "specialty": "Adventure Games"
+    }
+]

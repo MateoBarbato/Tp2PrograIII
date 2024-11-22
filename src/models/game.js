@@ -33,6 +33,16 @@ const Game = sequelize.define('Game', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  developerId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'Developers',
+      key: 'id',
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL',
+  },
 });
 
 module.exports = Game;

@@ -1,0 +1,73 @@
+[
+    {
+      "name": "Super Arcade Adventure",
+      "type": "Arcade",
+      "status": "active",
+      "platform": "PC",
+      "developerId": 1
+    },
+    {
+      "name": "Epic Strategy Quest",
+      "type": "Strategy",
+      "status": "active",
+      "platform": "Mobile",
+      "developerId": 2
+    },
+    {
+      "name": "Adventure King",
+      "type": "Adventure",
+      "status": "inactive",
+      "platform": "Console",
+      "developerId": 1
+    },
+    {
+      "name": "Sports World Championship",
+      "type": "Sports",
+      "status": "active",
+      "platform": "PC",
+      "developerId": 3
+    },
+    {
+      "name": "Strategy Pro Max",
+      "type": "Strategy",
+      "status": "active",
+      "platform": "Mobile",
+      "developerId": 2
+    },
+    {
+      "name": "Arcade Fever",
+      "type": "Arcade",
+      "status": "inactive",
+      "platform": "PC",
+      "developerId": 1
+    },
+    {
+      "name": "Adventure Hero",
+      "type": "Adventure",
+      "status": "active",
+      "platform": "Console",
+      "developerId": 3
+    },
+    {
+      "name": "Sports Legend",
+      "type": "Sports",
+      "status": "active",
+      "platform": "Mobile",
+      "developerId": 3
+    },
+    {
+      "name": "Fantasy Adventure",
+      "type": "Adventure",
+      "status": "active",
+      "platform": "PC",
+      "developerId": 2
+    },
+    {
+      "name": "Arcade Master",
+      "type": "Arcade",
+      "status": "inactive",
+      "platform": "Console",
+      "developerId": 1
+    }
+  ]
+  
