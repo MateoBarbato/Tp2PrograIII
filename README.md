@@ -1,8 +1,8 @@
 ﻿### **Descripción del Proyecto**
 
-**Proyecto:**  TP2 Programación III - Sistema de Gestión de Desarrolladoras y Juegos
+**Proyecto:**  TP2 Programación III - Sistema de Gestión de desarrolladores y Juegos
 
-Este proyecto es una API RESTful diseñada para gestionar desarrolladoras de videojuegos y sus juegos asociados. Proporciona endpoints para realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) tanto para desarrolladoras como para juegos. La API permite manejar relaciones entre desarrolladoras y juegos, así como soportar funcionalidades avanzadas como paginación, ordenamiento y filtrado de resultados.
+Este proyecto es una API RESTful diseñada para gestionar desarrolladores de videojuegos y sus juegos asociados. Proporciona endpoints para realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) tanto para desarrolladores como para juegos. La API permite manejar relaciones entre desarrolladores y juegos, así como soportar funcionalidades avanzadas como paginación, ordenamiento y filtrado de resultados.
 
 ### **TP2 Programación III**
 
@@ -31,12 +31,12 @@ Este proyecto es una API RESTful diseñada para gestionar desarrolladoras de vid
 
 ### **Características Principales**
 
-1.  **Gestión de Desarrolladoras:**
+1.  **Gestión de desarrolladores:**
     
-    -   Crear nuevas desarrolladoras.
-    -   Leer todas las desarrolladoras con soporte para filtros y ordenamiento.
+    -   Crear nuevas desarrolladores.
+    -   Leer todas las desarrolladores con soporte para filtros y ordenamiento.
     -   Leer una desarrolladora específica por su ID.
-    -   Eliminar desarrolladoras.
+    -   Eliminar desarrolladores.
 2.  **Gestión de Juegos:**
     
     -   Crear nuevos juegos asociados a una desarrolladora.
@@ -76,23 +76,23 @@ Este proyecto es una API RESTful diseñada para gestionar desarrolladoras de vid
 
 La API está dividida en dos colecciones principales:
 
--   **Developers:**  Endpoints para manejar las desarrolladoras.
--   **Games:**  Endpoints para manejar los juegos y sus relaciones con las desarrolladoras.
+-   **Developers:**  Endpoints para manejar las desarrolladores.
+-   **Games:**  Endpoints para manejar los juegos y sus relaciones con las desarrolladores.
 
 ----------
 
 ### **Uso Típico**
 
-1.  **Crear Desarrolladoras y Juegos:**
+1.  **Crear desarrolladores y Juegos:**
     
-    -   Primero, se crean las desarrolladoras a través del endpoint  `/developers/create`.
-    -   Luego, se asocian juegos a estas desarrolladoras mediante  `/games/create`.
+    -   Primero, se crean las desarrolladores a través del endpoint  `/developers/create`.
+    -   Luego, se asocian juegos a estas desarrolladores mediante  `/games/create`.
 2.  **Consultar Juegos con Filtros:**
     
     -   Utiliza  `/games/getAll`  con parámetros como  `page`,  `limit`,  `type`,  `status`  para obtener resultados específicos.
 3.  **Gestión Completa:**
     
-    -   Los juegos y desarrolladoras se pueden actualizar o eliminar según sea necesario utilizando sus respectivos endpoints.
+    -   Los juegos y desarrolladores se pueden actualizar o eliminar según sea necesario utilizando sus respectivos endpoints.
 
 ----------
 
@@ -100,7 +100,7 @@ La API está dividida en dos colecciones principales:
 
 Un administrador de videojuegos puede usar esta API para:
 
--   Agregar nuevas desarrolladoras a su sistema.
+-   Agregar nuevas desarrolladores a su sistema.
 -   Registrar los juegos asociados con cada desarrolladora.
 -   Consultar juegos activos, paginados y ordenados por fecha de creación.
 -   Mantener el catálogo actualizado mediante actualizaciones y eliminaciones.
