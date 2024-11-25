@@ -27,7 +27,7 @@ Este proyecto es una API RESTful diseñada para gestionar desarrolladores de vid
 ### **Enlaces Relacionados**
 
 -   **[Documentación del Proyecto](https://github.com/MateoBarbato/Tp2PrograIII/blob/main/Documentacion.md)**: Guía detallada sobre los endpoints y funcionalidades del proyecto.
--   **[Script SQL](https://github.com/MateoBarbato/Tp2PrograIII/blob/main/DumpProgra3%20con%20data) : Creacion de schema y carga de datos.
+-   [Script SQL](https://github.com/MateoBarbato/Tp2PrograIII/blob/main/DumpProgra3%20con%20data) : Creacion de schema y carga de datos.
 ----------
 
 ### **Características Principales**
