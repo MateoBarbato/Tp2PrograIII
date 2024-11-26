@@ -34,8 +34,8 @@ Este proyecto es una API RESTful diseñada para gestionar desarrolladores de vid
 
 1.  **Gestión de desarrolladores:**
     
-    -   Crear nuevas desarrolladores.
-    -   Leer todas las desarrolladores con soporte para filtros y ordenamiento.
+    -   Crear nuevos desarrolladores.
+    -   Leer todas los desarrolladores con soporte para filtros y ordenamiento.
     -   Leer una desarrolladora específica por su ID.
     -   Eliminar desarrolladores.
 2.  **Gestión de Juegos:**
@@ -77,8 +77,8 @@ Este proyecto es una API RESTful diseñada para gestionar desarrolladores de vid
 
 La API está dividida en dos colecciones principales:
 
--   **Developers:**  Endpoints para manejar las desarrolladores.
--   **Games:**  Endpoints para manejar los juegos y sus relaciones con las desarrolladores.
+-   **Developers:**  Endpoints para manejar los desarrolladores.
+-   **Games:**  Endpoints para manejar los juegos y sus relaciones con los desarrolladores.
 
 ----------
 
@@ -86,8 +86,8 @@ La API está dividida en dos colecciones principales:
 
 1.  **Crear desarrolladores y Juegos:**
     
-    -   Primero, se crean las desarrolladores a través del endpoint  `/developers/create`.
-    -   Luego, se asocian juegos a estas desarrolladores mediante  `/games/create`.
+    -   Primero, se crean los desarrolladores a través del endpoint  `/developers/create`.
+    -   Luego, se asocian juegos a estos desarrolladores mediante  `/games/create`.
 2.  **Consultar Juegos con Filtros:**
     
     -   Utiliza  `/games/getAll`  con parámetros como  `page`,  `limit`,  `type`,  `status`  para obtener resultados específicos.
@@ -101,7 +101,7 @@ La API está dividida en dos colecciones principales:
 
 Un administrador de videojuegos puede usar esta API para:
 
--   Agregar nuevas desarrolladores a su sistema.
+-   Agregar nuevos desarrolladores a su sistema.
 -   Registrar los juegos asociados con cada desarrolladora.
 -   Consultar juegos activos, paginados y ordenados por fecha de creación.
 -   Mantener el catálogo actualizado mediante actualizaciones y eliminaciones.
